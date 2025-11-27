@@ -40,3 +40,86 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Todo app styles */
+:root {
+  --bg-card: rgba(255,255,255,0.03);
+  --bg-card-light: rgba(255,255,255,0.04);
+  --accent: #646cff;
+  --accent-strong: #535bf2;
+  --danger: #ff6b6b;
+  --muted: #9aa2b1;
+}
+
+.app-container {
+  max-width: 760px;
+  margin: 2.5rem auto;
+  padding: 24px;
+  background: linear-gradient(180deg, var(--bg-card), transparent);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  color: inherit;
+}
+
+h1 {
+  margin: 0 0 16px 0;
+  font-size: 1.8rem;
+}
+
+.todo-input {
+  display: inline-block;
+  width: calc(100% - 130px);
+  min-width: 160px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: transparent;
+  color: inherit;
+  margin-right: 12px;
+}
+
+.btn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background-color: rgba(255,255,255,0.04);
+  color: inherit;
+  cursor: pointer;
+}
+.add-button { background-color: var(--accent); color: white; border: none; }
+.add-button:hover { background-color: var(--accent-strong); }
+.delete-button { background-color: transparent; border: 1px solid rgba(255,255,255,0.05); color: var(--danger); }
+.delete-button:hover { background-color: rgba(255,107,107,0.08); }
+.save-button { background-color: rgba(100,108,255,0.12); border: 1px solid rgba(100,108,255,0.12); }
+
+.filters { margin-top: 18px; display: flex; gap: 8px; }
+.filter-button { background: transparent; border: 1px solid rgba(255,255,255,0.04); }
+.filter-button.active { background: rgba(100,108,255,0.12); border-color: rgba(100,108,255,0.2); }
+
+.todo-list { margin-top: 20px; list-style: none; padding: 0; margin-left: 0; }
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: var(--bg-card-light);
+}
+.todo-item:hover { transform: translateY(-1px); }
+.todo-item .task-title { margin-left: 6px; cursor: default; }
+.todo-item.completed { opacity: 0.7; }
+.task-title.completed { text-decoration: line-through; }
+
+.editable-input { padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06); background: transparent; color: inherit; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .app-container { padding: 16px; margin: 1rem; }
+  .todo-input { width: 100%; margin-right: 0; margin-bottom: 10px; }
+  .filters { flex-wrap: wrap; }
+  .btn { padding: 8px 10px; }
+}
+
